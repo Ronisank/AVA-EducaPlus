@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="../assets/imagens/favicon.jpg" type="image/x-icon">
+    <script type="module" src="../js/login.js" defer></script>
+    <link rel="stylesheet" href="../css/global.css">
+    <link rel="stylesheet" href="../css/login.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Honk:MORF@15&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <title>AVA-Educa+</title>
+</head>
+<body>
+    <main class="card-login">
+         <aside class="imgTelaLogin"></aside>
+      <form id="meuFormulario">
+        <h1>Bem-vindo!</h1>
+        <p>Faça login para continuar</p>
+        <div class="div-user">
+          <label for="usuario">Usuário</label><br />
+          <input type="text" id="usuario" placeholder="Digite seu email" />
+        </div>
+        <div class="div-senha">
+          <label id="labelSenha " for="senha">Senha</label><br />
+          <input
+            id="senha"
+            type="password"
+            placeholder="Digite sua senha"
+            />
+            <button type="button" id="btn-senha"></button>
+        </div>
+        <div class="div-btn">
+          <button type="button" id="btnEntrar" class="entrar" disabled>Entrar</button>
+
+          <button class="cadastrar"><a href="">Cadastrar</a></button>
+          <button type="button" class="resetSenha">Esqueceu sua senha?</button>
+        </div>
+      </form>
+    </main>
+</body>
+</html>
