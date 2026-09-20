@@ -4,5 +4,16 @@
     padding: 0;
     font-family: 'Inter', sans-serif;
 }
+:root{
+    /* ?Paleta de cores projeto */
+    --roxoPrimario: #7c3aed;
+    --roxoEscuro: #5b21b6;
+    --roxoClaro: #e9d5ff;
+    --cinzaClaro: #e2ebf0;
+    --cinzaMedio: #94a3b8;
+    --verde: #059669;
+    --vermelho: #dc2626;
+    --laranja: #d97706;
+}
 
 
