@@ -1,4 +1,4 @@
-import { usuarios } from '../js/listagem-usuarios.js';
+import { usuarios } from '../dados/listagem-usuarios.js';
 
 let usuarioLogado;
 

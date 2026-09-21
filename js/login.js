@@ -17,8 +17,7 @@ botaoEntrar.addEventListener('click', () => {
     login(txtUsuario, txtSenha)
         .then((mensagem) => {
             console.log(`Sucesso: ${mensagem}`);
-            alert('Logou');
-            // window.location.href = '../dashboard/dashboard.html'
+            window.location.href = '../dashboard/dashboard.html'
         })
         .catch((erro) => {
             console.error(`Erro: ${erro}`);
