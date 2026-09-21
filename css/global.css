@@ -78,7 +78,7 @@ li:hover{
     background-color: var(--roxoEscuro);
     cursor: pointer;
 }
-#cursos{
+#menuLateralCursos{
     cursor: not-allowed;
 }
 

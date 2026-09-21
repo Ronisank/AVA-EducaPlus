@@ -5,6 +5,7 @@ const sair = document.getElementById('sair');
 const usuario = document.querySelector('.nomeUsuario');
 const cursos = document.getElementById('cursos');
 const cadastroAlunos = document.getElementById('cadastro');
+const erroCursos = document.querySelector('.erroCursos');
 
 const usuarioString = sessionStorage.getItem('usuario');
 
@@ -36,10 +37,9 @@ function exibirCursos() {
             </div>`;
             });
 
-            console.log(`Sucesso: ${listarCurso}`);
-
         })
         .catch((erro) => {
+            erroCursos.innerHTML = `<div class="erroCursos"><p class="hidden">${erro}</p></div>`
             console.error(`Erro: ${erro}`);
 
         })

@@ -4,13 +4,11 @@ const usuarioString = sessionStorage.getItem('usuario');
 
 const usuarioSession = JSON.parse(usuarioString);
 
-// const usuarioEmail = usuarioSession.email;
-
 let cursosUsuario;
 
 export function listarCursos(usuario) {
     return new Promise((resolve, reject) => {
-        console.log(usuario, 'dentro da função listarcurso')
+
         const cursoEncontrado = cursos.filter((item) => {
 
             return item.emailProfessor === usuario.email;
@@ -32,4 +30,3 @@ export function listarCursos(usuario) {
     }
     )
 };
-// listarCursos(usuarioEmail);
