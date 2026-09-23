@@ -1,41 +1,200 @@
 <!doctype html>
-<html lang="pt">
+<html lang="pt-br">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><link rel="shortcut icon" href="../assets/imagens/favicon.jpg" type="image/x-icon">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="shortcut icon"
+      href="../assets/imagens/favicon.jpg"
+      type="image/x-icon"
+    />
     <script type="module" src="../js/cadastroAlunos.js" defer></script>
-    <link rel="stylesheet" href="../css/global.css">
-    <link rel="stylesheet" href="../css/cadastroAlunos.css">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Honk:MORF@15&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-<script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <link rel="stylesheet" href="../css/global.css" />
+    <link rel="stylesheet" href="../css/cadastroAlunos.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Honk:MORF@15&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+      rel="stylesheet"
+    />
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.30.1/moment.min.js"
+      integrity="sha512-QoJS4DOhdmG8kbbHkxmB/rtPdN62cGWXAdAFWWJPvUFF1/zxcPSdAnn4HhYZSIlVoLVEJ0LesfNlusgm2bPfnA=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <title>AVA-Educa+</title>
   </head>
   <body>
-      <header class="containerCabecalho">
-        <div class="cabecalhoEsquerdo">
-            <img src="../assets/imagens/imgCabecalho.png" alt="imagem educa mais" class="imgCabecalho">
-            <h1>AVA-Educa+</h1>
-        </div>
-        <div class="cabecalhoDireito">
-            <img src="../assets/imagens/usuario.png" alt="imagem usuario" srcset="" class="imgUsuario">
-            <h3 class="nomeUsuario"></h3>
-        </div>
-      </header>
+    <header class="containerCabecalho">
+      <div class="cabecalhoEsquerdo">
+        <img
+          src="../assets/imagens/imgCabecalho.png"
+          alt="imagem educa mais"
+          class="imgCabecalho"
+        />
+        <h1>AVA-Educa+</h1>
+      </div>
+      <div class="cabecalhoDireito">
+        <img
+          src="../assets/imagens/usuario.png"
+          alt="imagem usuario"
+          srcset=""
+          class="imgUsuario"
+        />
+        <h3 class="nomeUsuario"></h3>
+      </div>
+    </header>
     <main class="container">
       <aside>
         <nav class="navegar">
-            <ul>
-                <li id="dashboard"><img src="../assets/imagens/home.png" alt="imagem de casa" srcset="">Dashboard</li>
-                <li id="cursos"><img src="../assets/imagens/abra-o-livro.png" alt="imagem livro">Cursos</li>
-                <li id="cadastro"><img src="../assets/imagens/contato.png" alt="imagem contatos" srcset="">Cadastro de Alunos</li>
-                <li id="sair"><img src="../assets/imagens/sair.png" alt="imagem de porta" srcset="">Sair</li>
-            </ul>
+          <ul>
+            <li id="dashboard">
+              <img
+                src="../assets/imagens/home.png"
+                alt="imagem de casa"
+                srcset=""
+              />Dashboard
+            </li>
+            <li id="cursos">
+              <img
+                src="../assets/imagens/abra-o-livro.png"
+                alt="imagem livro"
+              />Cursos
+            </li>
+            <li id="cadastro">
+              <img
+                src="../assets/imagens/contato.png"
+                alt="imagem contatos"
+                srcset=""
+              />Cadastro de Alunos
+            </li>
+            <li id="sair">
+              <img
+                src="../assets/imagens/sair.png"
+                alt="imagem de porta"
+                srcset=""
+              />Sair
+            </li>
+          </ul>
         </nav>
       </aside>
       <section>
         <h1>Cadastro Alunos</h1>
+        <form class="formContainer">
+          <fieldset>
+            <legend>Dados Pessoais</legend>
+            <!-- <h3>Dados Pessoais</h3> -->
+            <div class="linhaGrid duasColunas">
+              <div class="campoForm">
+                <label for="nome">Nome Completo</label>
+                <input
+                  type="text"
+                  id="nome"
+                  placeholder="Digite o nome completo"
+                  autocomplete="name"
+                  max="80"
+                  min="4"
+                  required
+                />
+              </div>
+              <div class="campoForm">
+                <label for="genero">Gênero</label>
+                <select name="generos" id="genero" required>
+                  <option value="">Selecione</option>
+                  <option value="Masculino">Masculino</option>
+                  <option value="Feminino">Feminino</option>
+                </select>
+              </div>
+            </div>
+            <div class="linhaGrid duasColunas">
+              <div class="campoForm">
+                <label for="dtNascimento">Data de nascimento</label>
+                <input
+                  type="date"
+                  name="dtNascimento"
+                  id="dtNascimento"
+                  required
+                />
+              </div>
+              <div class="campoForm">
+                <label for="cpf">CPF</label>
+                <input
+                  type="number"
+                  id="cpf"
+                  placeholder="111.222.333-00"
+                  required
+                />
+              </div>
+            </div>
+            <div class="linhaGrid duasColunas">
+              <div class="campoForm">
+                <label for="fone">Telefone</label>
+                <input
+                  type="number"
+                  id="fone"
+                  placeholder="(00)0000-00000"
+                  required
+                />
+              </div>
+              <div class="campoForm">
+                <label for="email">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  placeholder="Digite seu email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="borda-interna">
+              <legend>Endereço</legend>
+
+              <label for="cep">CEP</label>
+              <input type="number" id="cep" placeholder="00.000-000" />
+              <div class="linhaGrid linhaRua">
+                <div class="campoForm">
+                  <label for="logradouro">Logradouro</label>
+                  <input type="text" id="logradouro" placeholder="Rua" />
+                </div>
+                <div class="campoForm">
+                  <label for="numero">Numero</label>
+                  <input
+                    type="number"
+                    id="numero"
+                    placeholder="000"
+                  />
+                </div>
+                <div class="campoForm">
+                  <label for="complemento">Complemento</label>
+                  <input
+                    type="text"
+                    id="complemento"
+                    placeholder="Apto-11"
+                  />
+                </div>
+              </div>
+              <div class="linhaGrid tresColunas">
+                <div class="campoForm">
+                  <label for="bairro">Bairro</label>
+                  <input type="text" id="bairro" placeholder="Bairro" />
+                </div>
+                <div class="campoForm">
+                  <label for="cidade">Cidade</label>
+                  <input type="text" id="cidade" placeholder="Cidade" />
+                </div>
+                <div class="campoForm">
+                  <label for="estado">Estado</label>
+                  <input type="text" id="estado" placeholder="Estado" />
+                </div>
+              </div>
+            </div>
+            <div class="containerBtn">
+              <button type="button" class="btnSalvar">Salvar</button>
+            </div>
+          </fieldset>
+        </form>
       </section>
     </main>
   </body>
