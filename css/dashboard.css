@@ -17,15 +17,14 @@
   display: flex;
   flex-direction: column;
   flex: 1;
-  padding: 30px;
+  padding: 10px;
   gap: 20px;
   background-color: var(--cinzaClaro);
 }
 .conteudoContador {
   display: flex;
   width: 100%;
-  margin-top: 20px;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
   gap: 20px;
 }
 #totalCursos {
@@ -35,13 +34,13 @@
 }
 .painelCardCursos {
   display: flex;
-  width: 100%;
+  width: 80%;
 }
 #cursosUsuario {
-  flex: 1;
   display: grid;
   grid-template-columns: repeat(2, 1fr);
   gap: 20px;
+  flex: 1;
 }
 .cardTotal {
   display: flex;
@@ -55,20 +54,20 @@
   border: 1px solid var(--roxoEscuro);
   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
 }
-.cardTotal:hover{
-    transform: translateY(-2px);
+.cardTotal:hover {
+  transform: translateY(-2px);
 }
 .cardTotal span {
   font-size: 1.5rem;
   color: var(--roxoPrimario);
   font-weight: bold;
-  text-align: right;  
+  text-align: right;
 }
-.cardTotal h2{
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--roxoPrimario);
-    margin: 0;
+.cardTotal h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--roxoPrimario);
+  margin: 0;
 }
 .cardCurso {
   display: flex;
@@ -78,7 +77,6 @@
   position: relative;
   gap: 16px;
   text-align: center;
-  position: relative;
   box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
   background-color: var(--roxoClaro);
   border: 1px solid var(--roxoEscuro);
@@ -88,6 +86,10 @@
 }
 .infoCurso {
   flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .cursosH2 {
   color: var(--roxoPrimario);
@@ -95,4 +97,9 @@
 }
 p {
   max-width: 100%;
+}
+.iconeCurso {
+  width: 50px;
+  height: 50px;
+  border-radius: 8px;
 }

@@ -54,11 +54,12 @@ h3{
     background-color: var(--cinzaClaro);
     border-radius: 15px;
     min-height: 100vh;
+    align-items: stretch;
 }
 aside{
     width: 250px;
     background-color: var(--roxoPrimario);
-    height: 100vh;
+    height: auto;
     border-radius: 15px;
     margin: 10px;
 }
