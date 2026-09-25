@@ -3,8 +3,8 @@ import { listarCursos } from "./cursos.js";
 const dashboard = document.getElementById('dashboard');
 const sair = document.getElementById('sair');
 const usuario = document.querySelector('.nomeUsuario');
-const cursos = document.getElementById('cursos');
-const totalCursos = document.getElementById('cardTotalCursos');
+const cursos = document.getElementById('cursosUsuario');
+const totalCursos = document.querySelector('.conteudoContador');
 const cadastroAlunos = document.getElementById('cadastro');
 const erroCursos = document.querySelector('.erroCursos');
 
@@ -31,19 +31,30 @@ function exibirCursos() {
     return listarCursos(usuarioSession)
         .then((dados) => {
             dados.forEach(curso => {
+
                 const dtInicioFormatada = moment(curso.dataInicio).format('DD/MM/YYYY');
                 const dtFimFormatada = moment(curso.dataFim).format('DD/MM/YYYY');
 
+                console.log(dados)
                 cursos.innerHTML += `<div class="cardCurso">
-                <h3>${curso.nomeCurso}</h3>
-                <p>Início: ${dtInicioFormatada}</p>
-                <p>Fim: ${dtFimFormatada}</p>
+                <div class="infoCurso">
+                    <h3>${curso.nomeCurso}</h3>
+                    <p>Início: ${dtInicioFormatada}</p>
+                    <p>Fim: ${dtFimFormatada}</p>
+                </div>
             </div>`;
             });
-            totalCursos.innerHTML = `<div class="cursosTotal">
-            <h2 class="cursosH2">Total de cursos</h2>
-            <h3 class="cursos><h3">${dados.length}</h3>
-            </div>`
+            console.log('TEla cursos Total ', dados.length)
+            totalCursos.innerHTML = `
+            <div class="cardTotal">
+            <h2>Total de cursos</h2>
+            <span>${dados.length}</span>
+            </div>
+            <div class="cardTotal">
+            <h2>Cursos Ativos</h2>
+            <span>${dados.length}</span>
+            </div>
+            `
 
         })
         .catch((erro) => {

@@ -53,15 +53,18 @@ h3{
     display: flex;
     background-color: var(--cinzaClaro);
     border-radius: 15px;
+    min-height: 100vh;
+}
+aside{
+    width: 250px;
+    background-color: var(--roxoPrimario);
+    height: 100vh;
+    border-radius: 15px;
+    margin: 10px;
 }
 .navegar{
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 100vh;
-    background-color: var(--roxoPrimario);
-    border-radius: 15px;
-    margin: 10px;
 }
 
 li{
