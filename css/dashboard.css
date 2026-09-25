@@ -1,5 +1,17 @@
-section{
+.container{
     width: 100%;
+}
+section{
+    display: flex;
+    flex-wrap: wrap;
+    /* max-width: 100%; */
+    gap: 10px;
+}
+.cardTotalCursos{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
 }
 .erroCursos{
     display: flex;
@@ -8,11 +20,45 @@ section{
     margin-top: 100px;
 }
 .hidden {
-  color: #691911;
-  background-color: #f4d6d2;
-  border-color: #f0c5c1;
+  color: var(--vermelhoErro);
+  background-color: var(--vermelhoErroBack);
+  border-color: var(--vermelhoErroBorda);
   border-radius: 10px;
   text-align: center;
   font-size: 20px;
   padding: 10px;
+}
+.cardCurso{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    width: 200px;
+    height: 100px;
+    font-size: 0.9rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    gap: 10px;
+    text-align: center;
+}
+.cursosTotal{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    border: 1px solid red;
+    width: 100px;
+    height: 100px;
+    font-size: 0.9rem;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    gap: 10px;
+}
+.cursosH2{
+    color: var(--roxoPrimario);
+    text-align: center;
+}
+p{
+    max-width: 100%;
 }

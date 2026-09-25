@@ -12,9 +12,12 @@
     --cinzaClaro: #e2ebf0;
     --cinzaMedio: #94a3b8;
     --verde: #059669;
-    --vermelho: #dc2626;
+    --vermelhoErro: #691911;
+    --vermelhoErroBack: #f4d6d2;
+    --vermelhoErroBorda: #f0c5c1;
     --laranja: #d97706;
 }
+
 body{
     background-color: var(--roxoClaro);
 }
