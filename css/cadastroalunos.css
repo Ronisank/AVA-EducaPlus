@@ -3,6 +3,7 @@ fieldset {
   border: 2px solid var(--roxoPrimario);
   color: var(--roxoEscuro);
   padding: 10px;
+  margin-bottom: 20px;
 }
 legend {
   font-size: 1.3rem;
@@ -55,7 +56,6 @@ label {
 /* *Estilização dos Inputs e Select */
 input,
 select {
-  /* width: 100%; */
   height: 40px;
   padding: 0 16px;
   border: 1px solid #e2e8f0;
@@ -64,10 +64,9 @@ select {
   color: var(--cinzamedio);
   background-color: #fff;
   box-sizing: border-box;
-  transition: all 0.2s ease; /* Animação suave ao focar */
+  transition: all 0.2s ease;
 }
 
-/* ?Efeito visual quando o usuário clica para digitar */
 input:focus,
 select:focus {
   outline: none;
@@ -91,4 +90,8 @@ select:focus {
   cursor: pointer;
   transition: background-color 0.2s ease;
   margin-top: 10px;
+}
+.btnSalvar:disabled{
+  background-color: var(--cinzaMedio);
+  cursor: not-allowed;
 }

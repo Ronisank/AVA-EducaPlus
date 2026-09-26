@@ -12,6 +12,7 @@ const email = document.getElementById('email');
 const numero = document.getElementById('numero');
 const complemento = document.getElementById('complemento');
 const btnSalvar = document.querySelector('.btnSalvar');
+const formulario = document.querySelector(".formContainer");
 
 //* \/---campos preenchidos pela API ViaCep---\/
 
@@ -129,6 +130,7 @@ btnSalvar.addEventListener('click', () => {
         bairro.value
     );
     CadastrarAluno(novoAluno);
+    formulario.reset();
     console.log(novoAluno);
 });
 

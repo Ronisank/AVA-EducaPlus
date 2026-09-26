@@ -10,6 +10,7 @@ export function CadastrarAluno(aluno) {
 
             alunos.push(aluno);
 
+
             resolve(Swal.fire({
                 position: "top-end",
                 icon: "success",
