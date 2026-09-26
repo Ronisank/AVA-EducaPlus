@@ -10,10 +10,20 @@ export function CadastrarAluno(aluno) {
 
             alunos.push(aluno);
 
-            resolve('Aluno cadastrado com sucesso!');
+            resolve(Swal.fire({
+                position: "top-end",
+                icon: "success",
+                title: "Aluno cadastrado com sucesso!",
+                showConfirmButton: false,
+                timer: 1500
+            }));
         } else {
 
-            reject("Erro ao cadastrar o aluno");
+            reject(Swal.fire({
+                title: "Erro ao cadastrar o aluno",
+                icon: "error",
+                draggable: true
+            }));
         }
 
 
