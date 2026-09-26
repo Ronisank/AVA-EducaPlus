@@ -1,0 +1,84 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', sans-serif;
+}
+:root{
+    /* ?Paleta de cores projeto */
+    --roxoPrimario: #7c3aed;
+    --roxoEscuro: #5b21b6;
+    --roxoClaro: #e9d5ff;
+    --cinzaClaro: #e2ebf0;
+    --cinzaMedio: #94a3b8;
+    --verde: #059669;
+    --vermelho: #dc2626;
+    --laranja: #d97706;
+}
+body{
+    background-color: var(--roxoClaro);
+}
+.containerCabecalho{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 10px;
+}
+.cabecalhoEsquerdo{
+    display: flex;
+    align-items: center;
+}
+.cabecalhoDireito{
+    display: flex;
+    align-items: center;
+}
+h1{
+   color: var(--roxoPrimario);
+   padding: 10px;
+}
+.imgCabecalho{
+    width: 100px;
+    height: 100px;
+}
+.imgUsuario{
+    width: 60px;
+}
+h3{
+    color: var(--roxoPrimario);
+}
+.container{
+    display: flex;
+    background-color: var(--cinzaClaro);
+    border-radius: 15px;
+}
+.navegar{
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    height: 100vh;
+    background-color: var(--roxoPrimario);
+    border-radius: 15px;
+    margin: 10px;
+}
+
+li{
+    display: flex;
+    font-size: 1rem;
+    align-items: center;
+    flex-wrap: nowrap;
+    padding: 15px;
+    border-radius: 15px;
+    
+}
+img {
+    width: 50px;
+    margin-right: 15px;
+}
+li:hover{
+    background-color: var(--roxoEscuro);
+    cursor: pointer;
+}
+#cursos{
+    cursor: not-allowed;
+}
+

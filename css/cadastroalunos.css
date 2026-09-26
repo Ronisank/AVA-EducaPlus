@@ -1,0 +1,97 @@
+fieldset {
+  border-radius: 10px;
+  border: 2px solid var(--roxoPrimario);
+  color: var(--roxoEscuro);
+  padding: 10px;
+  margin-bottom: 20px;
+}
+legend {
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.formContainer {
+  max-width: 800px;
+}
+.linhaGrid {
+  display: grid;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.duasColunas {
+  grid-template-columns: 1fr 1fr;
+}
+.tresColunas {
+  grid-template-columns: 1fr 1fr 1fr;
+}
+.campoForm {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  width: 100%;
+}
+.borda-interna {
+  border-top: 2px solid var(--roxoPrimario);
+  color: var(--cinzamedio);
+}
+#cep {
+  display: flex;
+  margin-bottom: 10px;
+}
+.linhaRua {
+  grid-template-columns: 4fr 1fr 1fr;
+}
+#numero {
+  width: 90%;
+}
+#complemento {
+  width: 90%;
+}
+label {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--cinzamedio);
+  margin-left: 5px;
+}
+
+/* *Estilização dos Inputs e Select */
+input,
+select {
+  height: 40px;
+  padding: 0 16px;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  font-size: 16px;
+  color: var(--cinzamedio);
+  background-color: #fff;
+  box-sizing: border-box;
+  transition: all 0.2s ease;
+}
+
+input:focus,
+select:focus {
+  outline: none;
+  border-color: #7c3aed;
+  box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.1);
+}
+.containerBtn {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+.btnSalvar {
+  width: 20%;
+  height: 46px;
+  background-color: #7c3aed;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+  margin-top: 10px;
+}
+.btnSalvar:disabled{
+  background-color: var(--cinzaMedio);
+  cursor: not-allowed;
+}
