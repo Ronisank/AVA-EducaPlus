@@ -16,6 +16,7 @@ export function listarCursos(usuario) {
         if (cursoEncontrado.length > 0) {
             cursosUsuario = cursoEncontrado.map((index) => {
                 return ({
+                    iconeUrl: index.iconeUrl,
                     nomeCurso: index.nomeCurso,
                     dataInicio: index.dataInicio,
                     dataFim: index.dataFim

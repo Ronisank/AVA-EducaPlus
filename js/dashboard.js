@@ -30,21 +30,25 @@ sair.addEventListener('click', () => {
 function exibirCursos() {
     return listarCursos(usuarioSession)
         .then((dados) => {
+            cursos.innerHTML = "";
+            let totalCursosAtivos = 0;
             dados.forEach(curso => {
 
                 const dtInicioFormatada = moment(curso.dataInicio).format('DD/MM/YYYY');
                 const dtFimFormatada = moment(curso.dataFim).format('DD/MM/YYYY');
 
+                moment(curso.dataFim).isAfter(moment(), 'day') ? totalCursosAtivos++ : 0;
+
                 console.log(dados)
                 cursos.innerHTML += `<div class="cardCurso">
                 <div class="infoCurso">
+                    <img class="iconeCurso" src="${curso.iconeUrl}" alt="LogoCurso">
                     <h3>${curso.nomeCurso}</h3>
                     <p>Início: ${dtInicioFormatada}</p>
                     <p>Fim: ${dtFimFormatada}</p>
                 </div>
             </div>`;
             });
-            console.log('TEla cursos Total ', dados.length)
             totalCursos.innerHTML = `
             <div class="cardTotal">
             <h2>Total de cursos</h2>
@@ -52,7 +56,7 @@ function exibirCursos() {
             </div>
             <div class="cardTotal">
             <h2>Cursos Ativos</h2>
-            <span>${dados.length}</span>
+            <span>${totalCursosAtivos}</span>
             </div>
             `
 
