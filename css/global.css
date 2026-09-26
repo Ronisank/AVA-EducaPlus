@@ -12,9 +12,12 @@
     --cinzaClaro: #e2ebf0;
     --cinzaMedio: #94a3b8;
     --verde: #059669;
-    --vermelho: #dc2626;
+    --vermelhoErro: #691911;
+    --vermelhoErroBack: #f4d6d2;
+    --vermelhoErroBorda: #f0c5c1;
     --laranja: #d97706;
 }
+
 body{
     background-color: var(--roxoClaro);
 }
@@ -50,15 +53,19 @@ h3{
     display: flex;
     background-color: var(--cinzaClaro);
     border-radius: 15px;
+    min-height: 100vh;
+    align-items: stretch;
+}
+aside{
+    width: 250px;
+    background-color: var(--roxoPrimario);
+    height: auto;
+    border-radius: 15px;
+    margin: 10px;
 }
 .navegar{
     display: flex;
     flex-direction: column;
-    width: 300px;
-    height: 100vh;
-    background-color: var(--roxoPrimario);
-    border-radius: 15px;
-    margin: 10px;
 }
 
 li{
@@ -78,7 +85,7 @@ li:hover{
     background-color: var(--roxoEscuro);
     cursor: pointer;
 }
-#cursos{
+#menuLateralCursos{
     cursor: not-allowed;
 }
 
