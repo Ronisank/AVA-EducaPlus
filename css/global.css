@@ -1,91 +1,171 @@
-*{
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-    font-family: 'Inter', sans-serif;
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", sans-serif;
 }
-:root{
-    /* ?Paleta de cores projeto */
-    --roxoPrimario: #7c3aed;
-    --roxoEscuro: #5b21b6;
-    --roxoClaro: #e9d5ff;
-    --cinzaClaro: #e2ebf0;
-    --cinzaMedio: #94a3b8;
-    --verde: #059669;
-    --vermelhoErro: #691911;
-    --vermelhoErroBack: #f4d6d2;
-    --vermelhoErroBorda: #f0c5c1;
-    --laranja: #d97706;
-}
-
-body{
-    background-color: var(--roxoClaro);
-}
-.containerCabecalho{
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    margin: 10px;
-}
-.cabecalhoEsquerdo{
-    display: flex;
-    align-items: center;
-}
-.cabecalhoDireito{
-    display: flex;
-    align-items: center;
-}
-h1{
-   color: var(--roxoPrimario);
-   padding: 10px;
-}
-.imgCabecalho{
-    width: 100px;
-    height: 100px;
-}
-.imgUsuario{
-    width: 60px;
-}
-h3{
-    color: var(--roxoPrimario);
-}
-.container{
-    display: flex;
-    background-color: var(--cinzaClaro);
-    border-radius: 15px;
-    min-height: 100vh;
-    align-items: stretch;
-}
-aside{
-    width: 250px;
-    background-color: var(--roxoPrimario);
-    height: auto;
-    border-radius: 15px;
-    margin: 10px;
-}
-.navegar{
-    display: flex;
-    flex-direction: column;
+:root {
+  /* ?Paleta de cores projeto */
+  --roxoPrimario: #7c3aed;
+  --roxoEscuro: #5b21b6;
+  --roxoClaro: #e9d5ff;
+  --cinzaClaro: #e2ebf0;
+  --cinzaMedio: #94a3b8;
+  --verde: #059669;
+  --vermelhoErro: #691911;
+  --vermelhoErroBack: #f4d6d2;
+  --vermelhoErroBorda: #f0c5c1;
+  --laranja: #d97706;
 }
 
-li{
-    display: flex;
-    font-size: 1rem;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding: 15px;
-    border-radius: 15px;
-    
+body {
+  background-color: var(--roxoPrimario);
+}
+.containerCabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+}
+.cabecalhoEsquerdo {
+  display: flex;
+  align-items: center;
+}
+.cabecalhoDireito {
+  display: flex;
+  align-items: center;
+}
+h1 {
+  color: var(--roxoClaro);
+  padding: 10px;
+}
+.imgCabecalho {
+  width: 100px;
+  height: 100px;
+  background-color: var(--roxoClaro);
+  border-radius: 50px;
+}
+.imgUsuario {
+  width: 60px;
+}
+h3 {
+  color: var(--roxoClaro);
+}
+.container {
+  display: flex;
+  background-color: var(--cinzaClaro);
+  border-radius: 15px;
+  min-height: 100vh;
+  align-items: stretch;
+}
+aside {
+  width: 250px;
+  background-color: var(--roxoPrimario);
+  height: auto;
+  border-radius: 15px;
+  margin: 10px;
+  color: var(--roxoClaro);
+}
+.navegar {
+  display: flex;
+  flex-direction: column;
+}
+
+li {
+  display: flex;
+  font-size: 1rem;
+  align-items: center;
+  flex-wrap: nowrap;
+  padding: 15px;
+  border-radius: 15px;
 }
 img {
-    width: 50px;
-    margin-right: 15px;
+  width: 50px;
+  margin-right: 15px;
 }
-li:hover{
-    background-color: var(--roxoEscuro);
-    cursor: pointer;
+li:hover {
+  background-color: var(--roxoEscuro);
+  cursor: pointer;
 }
-#menuLateralCursos{
-    cursor: not-allowed;
+#menuLateralCursos {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 
+/*? ------ RESPONSIVIDADE --------*/
+
+@media screen and (max-width: 768px) {
+  main {
+    padding-bottom: 70px;
+  }
+
+  aside {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    z-index: 100;
+    background-color: var(--roxoPrimario);
+    color: var(--roxoClaro);
+    margin: 0;
+    border-radius: 0;
+  }
+  aside ul {
+    display: flex;
+    justify-content: space-around;
+    align-items: start;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  aside li {
+    flex: 1;
+    text-align: center;
+    font-size: 0.8rem;
+    flex-direction: column;
+  }
+  img{
+    margin-bottom: 5px;
+    width: 30px;
+  }
+  .containerCabecalho {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 10px;
+  height: 10vh;
+}
+.cabecalhoEsquerdo {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cabecalhoDireito {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+h1 {
+  color: var(--roxoClaro);
+  padding: 10px;
+  font-size: 1rem;
+}
+.imgCabecalho {
+  width: 30px;
+  height: 30px;
+  background-color: var(--roxoClaro);
+  border-radius: 50px;
+}
+.imgUsuario {
+  width: 40px;
+}
+h3 {
+  color: var(--roxoClaro);
+  font-size: 1rem;
+}
+#menuLateralCursos {
+  opacity: 0.35;
+}
+}

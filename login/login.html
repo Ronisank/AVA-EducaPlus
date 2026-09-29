@@ -20,13 +20,13 @@
         <h1>Bem-vindo!</h1>
         <p>Faça login para continuar</p>
         <div id="divErro"></div>
-        <div class="div-user">
-          <label for="usuario">Usuário</label><br />
+        <div class="div-usuario">
+          <label for="usuario" id="labelUsuario">Usuário</label>
           <input type="text" id="usuario" placeholder="Digite seu email"
           autocomplete="email" required/>
         </div>
         <div class="div-senha">
-          <label id="labelSenha " for="senha">Senha</label><br />
+          <label id="labelSenha " for="senha">Senha</label>
           <input
             id="senha"
             type="password"
@@ -36,10 +36,9 @@
             />
             <button type="button" id="btn-senha"></button>
         </div>
-        <div class="div-btn">
-          <button type="button" id="btnEntrar" class="entrar" disabled>Entrar</button>
+        <div class="div-btn">         
+            <button type="button" id="btnEntrar" class="entrar" disabled>Entrar</button>          
 
-          <button class="cadastrar"><a href="">Cadastrar</a></button>
           <button type="button" class="resetSenha">Esqueceu sua senha?</button>
         </div>
       </form>
