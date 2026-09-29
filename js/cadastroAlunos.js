@@ -2,6 +2,8 @@ import { Aluno } from "./aluno.js";
 import { CadastrarAluno } from "./alunos.js";
 
 const dashboard = document.getElementById('dashboard');
+const usuario = document.querySelector('.nomeUsuario');
+const sair = document.getElementById('sair');
 const cep = document.getElementById('cep');
 const nome = document.getElementById('nome');
 const genero = document.getElementById('genero');
@@ -12,6 +14,13 @@ const email = document.getElementById('email');
 const numero = document.getElementById('numero');
 const complemento = document.getElementById('complemento');
 const btnSalvar = document.querySelector('.btnSalvar');
+
+const usuarioString = sessionStorage.getItem('usuario');
+
+const usuarioSession = JSON.parse(usuarioString);
+
+usuario.textContent = usuarioSession.nome;
+
 
 //* \/---campos preenchidos pela API ViaCep---\/
 
@@ -133,3 +142,9 @@ btnSalvar.addEventListener('click', () => {
 });
 
 dashboard.addEventListener('click', () => window.location.href = '../dashboard/dashboard.html');
+
+sair.addEventListener('click', () => {
+    sessionStorage.removeItem('usuario');
+    navigation.navigate('../login/login.html');
+
+});
