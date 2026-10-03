@@ -1,6 +1,6 @@
 # AVA-EducaPlus
 
-# AVA-Educa+ Feat: adicionado o ReadMe e prints da tela
+# AVA-Educa+
 
 ## 📚 Descrição
 
@@ -46,7 +46,7 @@ AVA-EducaPlus/
 ### 1. Clone o repositório
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone 
 
 ### 2. Entre na pasta
 
@@ -66,11 +66,11 @@ git clone URL_DO_REPOSITORIO
 
 ### Login
 
-📷 ![Tela Login](../AVA-EducaPlus/assets/prints-ReadMe/TelaLogin.PNG)
+📷 ![Tela Login](assets/prints-ReadMe/TelaLogin.PNG)
 
 ### Dashboard
 
-📷 ![Tela Dashboard](./assets/prints-ReadMe/telaDashboard.PNG)
+📷 ![Tela Dashboard](assets/prints-ReadMe/telaDashboard.PNG)
 
 ### Cadastro de Alunos
 
