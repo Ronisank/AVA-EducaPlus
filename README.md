@@ -1,5 +1,3 @@
-# AVA-EducaPlus
-
 # AVA-Educa+
 
 ## 📚 Descrição
@@ -40,6 +38,7 @@ AVA-EducaPlus/
 ├── index.html
 ├── package.json
 └── README.md
+```
 
 ## ▶️ Como executar
 
@@ -47,50 +46,66 @@ AVA-EducaPlus/
 
 ```bash
 git clone https://github.com/Ronisank/AVA-EducaPlus.git
-
 ```
 
 ### 2. Entre na pasta
 
-```cd AVA-EducaPlus```
+```bash
+cd AVA-EducaPlus
+```
 
 ### 3. Execute o projeto
 
-```index.html```
+```bash
+index.html
+```
 
 ### O sistema irá direcionar para a tela de login.
 
 ### Os usuários para teste estão disponíveis em:
 
-```dados/listagem-usuarios.js```
+```bash
+dados/listagem-usuarios.js
+```
 
 ## Prints – Web
 
 ### Login
 
-📷 ![Tela Login](assets/prints-ReadMe/TelaLogin.PNG)
-
+📷 <p align="center">
+  <img src="assets/prints-ReadMe/TelaLogin.PNG" alt="Tela Login" width="400">
+</p>
 ### Dashboard
 
-📷 ![Tela Dashboard](assets/prints-ReadMe/telaDashboard.PNG)
+📷 <p align="center">
+  <img src="assets/prints-ReadMe/telaDashboard.PNG" alt="Tela Dashboard" width="400">
+</p>
 
 ### Cadastro de Alunos
 
-📷 ![Tela Cadastro de Alunos](assets/prints-ReadMe/telaCadastro.PNG)
+📷 <p align="center">
+  <img src="assets/prints-ReadMe/telaCadastro.PNG" alt="Tela cadastro" width="400">
+</p>
 
 ## 📱 Prints – Mobile
 
 ### Login
 
-📷 ![Tela Login](../AVA-EducaPlus/assets/prints-ReadMe/telaLogin-Mobile.jpeg)
+📷 <p align="center">
+  <img src="assets/prints-ReadMe/telaLogin-Mobile.jpeg" alt="Tela login-mobile" width="300">
+</p>
 
 ### Dashboard
 
-📷 ![Tela Login](../AVA-EducaPlus/assets/prints-ReadMe/telaDashboard-mobile.jpeg)
+📷 <p align="center">
+  <img src="assets/prints-ReadMe/telaDashboard-mobile.jpeg" alt="Tela Dashboard-Mobile" width="300">
+</p>
 
 ### Cadastro de Alunos
 
-📷 ![Tela Login](../AVA-EducaPlus/assets/prints-ReadMe/telaCadastro-mobile.jpeg)
+📷 <p align="center">
+  <img src="assets/prints-ReadMe/telaCadastro-mobile.jpeg" alt="Tela cadastro-mobile" width="300">
+</p>
 
 ## 🔮 Melhorias Futuras
 
