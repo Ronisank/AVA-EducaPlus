@@ -46,21 +46,23 @@ AVA-EducaPlus/
 ### 1. Clone o repositório
 
 ```bash
-git clone 
+git clone https://github.com/Ronisank/AVA-EducaPlus.git
+
+```
 
 ### 2. Entre na pasta
 
-```cd AVA-EducaPlus
+```cd AVA-EducaPlus```
 
 ### 3. Execute o projeto
 
-```index.html
+```index.html```
 
 ### O sistema irá direcionar para a tela de login.
 
 ### Os usuários para teste estão disponíveis em:
 
-```dados/listagem-usuarios.js
+```dados/listagem-usuarios.js```
 
 ## Prints – Web
 
@@ -74,7 +76,7 @@ git clone
 
 ### Cadastro de Alunos
 
-📷 ![Tela Cadastro de Alunos](./assets/prints-ReadMe/telaCadastro.PNG)
+📷 ![Tela Cadastro de Alunos](assets/prints-ReadMe/telaCadastro.PNG)
 
 ## 📱 Prints – Mobile
 
