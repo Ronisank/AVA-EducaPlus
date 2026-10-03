@@ -8,9 +8,9 @@
       href="../assets/imagens/favicon.jpg"
       type="image/x-icon"
     />
-    <script type="module" src="../js/cadastroAlunos.js" defer></script>
+    <script type="module" src="../cadastro-alunos/cadastroAlunos.js" defer></script>
     <link rel="stylesheet" href="../css/global.css" />
-    <link rel="stylesheet" href="../css/cadastroAlunos.css" />
+    <link rel="stylesheet" href="../cadastro-alunos/cadastroalunos.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -94,10 +94,11 @@
                   id="nome"
                   placeholder="Digite o nome completo"
                   autocomplete="name"
-                  max="80"
-                  min="4"
+                  maxlength="80"
+                  minlength="4"
                   required
                 />
+                <span class="obrigatorio"></span>
               </div>
               <div class="campoForm">
                 <label for="genero">Gênero</label>
@@ -117,6 +118,7 @@
                   id="dtNascimento"
                   required
                 />
+                <span class="dataErro"></span>
               </div>
               <div class="campoForm">
                 <label for="cpf">CPF</label>
@@ -152,8 +154,13 @@
             <div class="borda-interna">
               <legend>Endereço</legend>
 
-              <label for="cep">CEP</label>
-              <input type="number" id="cep" placeholder="00.000-000" />
+              <div class="linhaGrid duasColunas">
+                <div class="campoForm">
+                  <label for="cep">CEP</label>
+                  <input type="number" id="cep" placeholder="00.000-000" />
+                  <span class="cepErro"></span>
+                </div>
+              </div>
               <div class="linhaGrid linhaRua">
                 <div class="campoForm">
                   <label for="logradouro">Logradouro</label>
@@ -161,19 +168,11 @@
                 </div>
                 <div class="campoForm">
                   <label for="numero">Numero</label>
-                  <input
-                    type="number"
-                    id="numero"
-                    placeholder="000"
-                  />
+                  <input type="number" id="numero" placeholder="000" />
                 </div>
                 <div class="campoForm">
                   <label for="complemento">Complemento</label>
-                  <input
-                    type="text"
-                    id="complemento"
-                    placeholder="Apto-11"
-                  />
+                  <input type="text" id="complemento" placeholder="Apto-11" />
                 </div>
               </div>
               <div class="linhaGrid tresColunas">
