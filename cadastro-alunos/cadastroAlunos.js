@@ -1,5 +1,5 @@
-import { Aluno } from "./aluno.js";
-import { CadastrarAluno } from "./alunos.js";
+import { Aluno } from "../js/aluno.js";
+import { CadastrarAluno } from "../js/alunos.js";
 
 const dashboard = document.getElementById('dashboard');
 const usuario = document.querySelector('.nomeUsuario');
@@ -8,6 +8,7 @@ const cep = document.getElementById('cep');
 const nome = document.getElementById('nome');
 const genero = document.getElementById('genero');
 const dtNascimento = document.getElementById('dtNascimento');
+const dataErro = document.querySelector('.dataErro');
 const cpf = document.getElementById('cpf');
 const fone = document.getElementById('fone');
 const email = document.getElementById('email');
@@ -15,6 +16,8 @@ const numero = document.getElementById('numero');
 const complemento = document.getElementById('complemento');
 const btnSalvar = document.querySelector('.btnSalvar');
 const formulario = document.querySelector(".formContainer");
+const cepErro = document.querySelector('.cepErro');
+const camposErros = document.querySelector('.obrigatorio')
 
 const usuarioString = sessionStorage.getItem('usuario');
 
@@ -35,13 +38,36 @@ const camposObrigatorios = [cep, nome, genero, dtNascimento, cpf, fone, email, n
 
 btnSalvar.disabled = true;
 
+let dataValida = false;
+
+dtNascimento.addEventListener('input', () => {
+    dataValida = validaDataNascimento();
+    validaCampos();
+});
+
+
 function validaCampos() {
+
+    const nomeValido = nome.value.trim().length >= 4 && nome.value.trim().length <= 80;
+    if (!nomeValido) {
+        nome.classList.add('erroNome');
+        camposErros.innerHTML = 'O texto deve ter entre 4 e 80 caracteres.';
+    }else{
+        nome.classList.remove('erroNome');
+        camposErros.innerHTML = '';
+        }
+    const valorCep = cep.value.replace(/\D/g, '');
+
+    const cepValido = valorCep.length === 8;
+
     const todosPreenchidos = camposObrigatorios.every(input => input.value.trim() !== '');
-    if (!todosPreenchidos || !validaDataNascimento()) {
-        btnSalvar.disabled = true;
-    } else {
-        btnSalvar.disabled = false;
-    }
+
+    btnSalvar.disabled = !(
+        todosPreenchidos &&
+        cepValido &&
+        dataValida &&
+        nomeValido
+    );
 }
 
 const camposDigitados = [cep, nome, genero, dtNascimento, cpf, fone, email, numero];
@@ -53,9 +79,32 @@ camposDigitados.forEach(input => {
     }
 });
 
+cep.addEventListener('input', () => {
+    const valorCep = cep.value.replace(/\D/g, '');
+
+    logradouro.value = '';
+    bairro.value = '';
+    cidade.value = '';
+    estado.value = '';
+
+    if (valorCep.length !== 8) {
+        cep.classList.add('class', 'erroCep');
+        cepErro.innerHTML = 'O cep precisa de 8 digitos';
+    } else {
+        cep.classList.remove('erroCep');
+        cepErro.innerHTML = '';
+        validaCampos();
+    }
+    validaCampos();
+});
+
 async function buscarCEP() {
     const valorCep = cep.value.replace(/\D/g, '');
+
     if (valorCep.length === 8) {
+        cep.classList.remove('erroCep');
+        cepErro.innerHTML = '';
+
         try {
             const resposta = await fetch(`https://viacep.com.br/ws/${valorCep}/json/`);
             const dados = await resposta.json();
@@ -66,17 +115,28 @@ async function buscarCEP() {
                 estado.value = dados.estado;
 
                 validaCampos();
-                console.log(camposDigitados, camposObrigatorios)
+
             } else {
-                alert('CEP não encontrado');
+                cep.classList.add('erroCep');
+                cepErro.innerHTML = 'CEP não encontrado';
+                logradouro.value = '';
+                bairro.value = '';
+                cidade.value = '';
+                estado.value = '';
+
             }
 
         } catch (erro) {
-            console.error("Erro ao buscar o usuário:", erro);
+            console.error("Erro ao buscar o cep:", erro);
+            logradouro.value = '';
+            bairro.value = '';
+            cidade.value = '';
+            estado.value = '';
         }
     } else {
-        alert('cep precisa de 8 digitos')
-        cep.value = '';
+        cep.classList.add('class', 'erroCep');
+        cepErro.innerHTML = 'O CEP precisa de 8 digitos';
+        validaCampos();
     }
 
 }
@@ -105,24 +165,40 @@ function validaDataNascimento() {
 
     if (!dataNascimento.isValid()) {
 
-        console.log("Informe uma data válida no formato DD/MM/YYYY");
+        dtNascimento.classList.add('erroCep')
+        dataErro.classList.add('erro');
+        dataErro.innerHTML = "Informe uma data válida no formato DD/MM/YYYY";
         return false;
+
     } else if (!dataNascimento.isAfter(dataMinima)) {
 
-        console.log("A data deve ser posterior a 31/12/1899");
+        dtNascimento.classList.add('erroCep')
+        dataErro.classList.add('erro');
+        dataErro.innerHTML = "A data deve ser posterior a 31/12/1899";
         return false;
+
     } else if (!dataNascimento.isBefore(dataAtual, 'day')) {
 
-        console.log("A data deve ser anterior à data atual");
+        dtNascimento.classList.add('erroCep')
+        dataErro.classList.add('erro');
+        dataErro.innerHTML = "A data deve ser anterior à data atual";
         return false;
+
     } else {
+
+        dtNascimento.classList.remove('erroCep')
+        dataErro.classList.remove('erro');
+        dataErro.innerHTML = "";
         dataFormatada = dataNascimento.format('DD/MM/YYYY');
-        console.log("Data válida!", dataNascimento);
         return true;
     }
 };
 
 btnSalvar.addEventListener('click', () => {
+    validaCampos();
+    if (btnSalvar.disabled) {
+        return;
+    }
     const novoAluno = new Aluno(
         nome.value,
         genero.value,
@@ -140,7 +216,7 @@ btnSalvar.addEventListener('click', () => {
     );
     CadastrarAluno(novoAluno);
     formulario.reset();
-    console.log(novoAluno);
+    btnSalvar.disabled = true;
 });
 
 dashboard.addEventListener('click', () => window.location.href = '../dashboard/dashboard.html');

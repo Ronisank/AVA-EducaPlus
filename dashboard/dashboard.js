@@ -1,4 +1,4 @@
-import { listarCursos } from "./cursos.js";
+import { listarCursos } from "../js/cursos.js";
 
 const dashboard = document.getElementById('dashboard');
 const sair = document.getElementById('sair');

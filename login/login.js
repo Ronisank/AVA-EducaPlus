@@ -1,4 +1,4 @@
-import { login } from "./auth.js";
+import { login } from "../js/auth.js";
 
 const botaoEntrar = document.getElementById('btnEntrar');
 const usuario = document.getElementById('usuario');
