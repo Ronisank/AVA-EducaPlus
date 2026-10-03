@@ -1,0 +1,146 @@
+.erroCursos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+}
+.hidden {
+  color: var(--vermelhoErro);
+  background-color: var(--vermelhoErroBack);
+  border-color: var(--vermelhoErroBorda);
+  border-radius: 10px;
+  text-align: center;
+  font-size: 20px;
+  padding: 10px;
+}
+#painelCursos {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 10px;
+  gap: 20px;
+  background-color: var(--cinzaClaro);
+}
+.conteudoContador {
+  display: flex;
+  width: 100%;
+  margin-bottom: 30px;
+  gap: 20px;
+}
+#totalCursos {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+.painelCardCursos {
+  display: flex;
+  width: 80%;
+}
+#cursosUsuario {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  flex: 1;
+}
+.cardTotal {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 100px;
+  background-color: var(--roxoClaro);
+  padding: 16px;
+  border-radius: 12px;
+  border: 1px solid var(--roxoEscuro);
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+}
+.cardTotal:hover {
+  transform: translateY(-2px);
+}
+.cardTotal{
+  font-size: 1.5rem;
+  color: var(--roxoPrimario);
+  font-weight: bold;
+  text-align: right;
+}
+.cardTotal h2 {
+  font-size: 1rem;
+  font-weight: bold;
+  color: var(--roxoEscuro);
+  margin: 0;
+}
+.cardCurso {
+  display: flex;
+  align-items: center;
+  border-radius: 12px;
+  padding: 24px;
+  position: relative;
+  gap: 16px;
+  text-align: center;
+  box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+  background-color: var(--roxoClaro);
+  border: 1px solid var(--roxoEscuro);
+}
+.cardCurso:hover {
+  transform: translateY(-2px);
+}
+.infoCurso {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.infoCurso h3{
+  color: var(--roxoEscuro);
+  margin-bottom: 10px;
+}
+.infoCurso p {
+  max-width: 100%;
+  color: var(--roxoPrimario);
+}
+.iconeCurso {
+  width: 60px;
+  height: 60px;
+  border-radius: 8px;
+  padding: 5px;
+}
+
+/*? ------ RESPONSIVIDADE --------*/
+
+@media screen and (max-width: 768px) {
+  .conteudoContador {
+    display: flex;
+    width: 100%;
+    margin-bottom: 20px;
+    gap: 20px;
+    justify-content: center;
+  }
+  span {
+    font-size: 1.3rem;
+  }
+  #cursosUsuario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    flex: 1;
+  }
+  .cardCurso {
+    width: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    padding: 24px;
+    text-align: center;
+    box-shadow: 10px 10px 10px 0px rgba(0, 0, 0, 0.5);
+    background-color: var(--roxoClaro);
+    border: 1px solid var(--roxoEscuro);
+  }
+  .painelCardCursos {
+    display: flex;
+    width: 100%;
+  }
+}
