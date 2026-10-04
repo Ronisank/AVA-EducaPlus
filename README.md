@@ -116,8 +116,6 @@ dados/listagem-usuarios.js
 * Implementar autenticação com JWT.
 * Criar CRUD completo de alunos e cursos.
 * Implementar diferentes níveis de acesso para usuários.
-* Desenvolver uma aplicação mobile.
-* Melhorar acessibilidade e experiência do usuário.
 
 ## 👨‍💻 Projeto
 
