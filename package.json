@@ -4,9 +4,9 @@
   "description": "Projeto Avaliativo Modulo 1",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "type": "module"
   },
-  "type": "module",
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Ronisank/AVA-EducaPlus.git"
