@@ -105,7 +105,11 @@
   border-radius: 8px;
   padding: 5px;
 }
-
+.textoSpan{
+  color: var(--roxoEscuro);
+  font-size: 1.6rem;
+  font-weight: bolder;
+}
 /*? ------ RESPONSIVIDADE --------*/
 
 @media screen and (max-width: 768px) {
